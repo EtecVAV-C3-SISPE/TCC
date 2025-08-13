@@ -1,0 +1,261 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.interface.meio{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    min-height: 104vh; /* Garante que o body ocupe pelo menos a altura da tela */
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1; /* Faz com que o conteúdo principal ocupe todo o espaço disponível */
+}
+
+/* Estilo do Header */
+
+header{
+    width: 100%;
+    padding: 40px 0;
+}
+
+header .interface{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img{
+    max-width: 100px;
+    max-height: 100px;
+}
+
+header .menu-desktop nav ul{
+    list-style-type: none;
+}
+
+header .menu-desktop nav ul li{
+    display: inline-block;
+    margin: 0 40px;
+}
+
+header .menu-desktop nav ul li a{
+    color: #7C7A7A;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.menu-desktop nav a:hover{
+    transform: scale(1.07);
+    transition: 0.3s;
+}
+
+header .btn-contato button{
+    width: 140px;
+    height: 50px;
+    font: 10px;
+    background-color: transparent;
+    border: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
+header .btn-contato button:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+    font-weight: 500;
+}
+
+
+.btn-image img{
+    max-width: 120px;
+}
+
+.btn-image{
+    border: none;
+    background-color: transparent;
+}
+/* fim do header */
+
+
+/* footer */
+footer{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 30px;
+    margin-top: 0;
+}
+
+footer .middle-footer a{
+    color: #7C7A7A;
+    margin: 0 15px;
+}
+
+footer .middle-footer{
+    margin: 20px 0;
+}
+
+footer .bottom-footer p{
+    color: #7C7A7A;
+}
+
+footer .bottom-footer{
+    border-top: 2px solid #324bd92f;
+    padding: 15px 0;
+}
+/* fim do footer */
+
+/* botão-login */
+.btn-login {
+  align-items: center;
+  background-color: #FFFFFF;
+  color: #7C7A7A;
+  border: 1px solid rgba(97, 97, 97, 0.267);
+  border-radius: .25rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  display: inline-flex;
+
+}
+
+.btn-login:hover,
+.btn-login:focus {
+  box-shadow: #acc3f2 0 3px 10px;
+}
+
+.btn-login:hover {
+  transform: translateY(-1px);
+}
+
+.btn-login:active {
+  background-color: #F0F0F1;
+  transform: translateY(0);
+}
+/* fim botão-login */
+
+.center-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:50vh; /* ocupa a altura total da tela */
+    gap: 20px;
+  }
+
+/* form-pais */
+.form-pais{
+    background-color: #acc3f2;
+    width: 500px;
+}
+
+/* Estilo do formulário */
+.form-pais {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .form-pais label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .form-pais input[type="text"],
+  .form-pais input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+  }
+  
+  .form-pais input:focus {
+    border-color: #337ab7;
+    outline: none;
+  }
+  
+  /* Botão de login */
+  .form-pais button {
+    width: 100%;
+    padding: 10px;
+    background-color: #337ab7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .form-pais button:hover {
+    background-color: #286090;
+  }
+
+  /* dashboard */
+
+  .conteudo-central {
+    min-height: 50vh;
+    padding-top: 60px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .mural a {
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #0d6efd;
+    font-weight: 500;
+  }
+  
+  .mural a:hover {
+    text-decoration: underline;
+  }
+  
+  /* fim do dashboard */
