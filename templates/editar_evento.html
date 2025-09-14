@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Evento</title>
+</head>
+<body>
+    <h1>Editar Evento</h1>
+
+    <form method="POST">
+        <input type="text" name="titulo" value="{{ evento.titulo }}" required>
+        <input type="date" name="data_evento" value="{{ evento.data_evento }}" required>
+        <textarea name="descricao">{{ evento.descricao }}</textarea>
+        <button type="submit">Salvar Alterações</button>
+    </form>
+
+    <a href="{{ url_for('calendario.calendario') }}">Voltar</a>
+</body>
+</html>

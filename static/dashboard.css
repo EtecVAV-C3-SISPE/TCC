@@ -8,9 +8,6 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 /* ===== FUNDO COMO MAR COM MOVIMENTO ===== */
@@ -88,46 +85,91 @@ header .logo img {
   transform: translateY(-2px);
 }
 
-/* ===== MAIN (ILHA BRANCA LOGIN) ===== */
+/* ===== MAIN ===== */
 main {
-  max-width: 450px;
-  margin: 120px auto;
-  padding: 40px 35px;
+  max-width: 850px;
+  margin: 100px auto;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 25px; /* espaço adequado entre elementos */
+  gap: 40px;
   background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+  border-radius: 25px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.3);
   position: relative;
   z-index: 1;
+  min-height: 70vh;
   text-align: center;
+}
+
+/* ===== CONTEÚDO ESQUERDA ===== */
+.conteudo-esquerda {
   flex: 1;
-  margin-top: 200px;
-  margin-bottom: 210px;
-  /* removi o min-height que esticava demais */
 }
 
-/* ===== LOGIN BUTTONS ===== */
-.btn-login {
+.titulo-principal {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 18px;
+  text-align: left;
   width: 100%;
-  padding: 16px;
-  border: none;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1.05rem;
-  cursor: pointer;
-  background: linear-gradient(180deg, #2563eb, #1e40af);
-  color: #fff;
-  transition: all .2s ease;
-  margin: 12px 0; /* espaçamento acima e abaixo de cada botão */
 }
 
-.btn-login:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+.subtitulo {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 25px;
+  max-width: 600px;   /* limite de largura */
+  line-height: 1.5;
+  margin-left: 0;     /* alinhado com o título */
+  margin-right: 0;
+  text-align: left;
+}
+
+/* ===== MURAL ===== */
+.mural {
+  flex: 0.9;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.mural-titulo {
+  font-size: 1.4rem;
+  color: #2563eb;
+  margin-bottom: 18px;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 4px;
+  text-align: center;
+}
+
+.btn-mural {
+  display: block;
+  background: #e0f2fe;
+  color: #1e40af;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.btn-mural:hover {
+  background: #bfdbfe;
+  color: #1e3a8a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15);
 }
 
 /* ===== FOOTER ===== */
@@ -137,7 +179,7 @@ footer {
   border-top: 1px solid #e5e7eb;
   text-align: center;
   font-size: 14px;
-  margin-top: auto; /* garante que fica só no fim da página */
+  margin-top: 60px;
   position: relative;
   z-index: 1;
 }
@@ -167,6 +209,12 @@ footer .bottom-footer p {
     max-width: 90%;
     padding: 40px 30px;
   }
+  .titulo-principal {
+    font-size: 2.2rem;
+  }
+  .subtitulo {
+    max-width: 100%;
+  }
 }
 
 /* Celulares */
@@ -181,5 +229,22 @@ footer .bottom-footer p {
     max-width: 95%;
     margin: 60px auto;
     padding: 30px 20px;
+    min-height: auto;
+  }
+  .titulo-principal {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .subtitulo {
+    font-size: 0.95rem;
+    text-align: center;   /* centraliza no mobile */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mural {
+    max-width: 100%;
+    padding: 15px;
   }
 }
+
+

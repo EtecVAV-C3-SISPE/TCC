@@ -1,74 +1,84 @@
-
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
   <title>SISPE</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-  <!-- google fonts -->
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
 </head>
 
 <body>
+  <!-- HEADER -->
   <header>
-
     <div class="interface">
-
       <section class="logo">
-        <img src="../static/images/login.png" alt="">
+        <img src="../static/images/login.png" alt="Logo SISPE">
       </section>
 
       <section class="menu-desktop">
         <nav>
           <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Casa</a></li>
-
+            <li><a href="{{ url_for('main.home') }}">Início</a></li>
+            <li><a href="{{ url_for('main.listar_noticias') }}">Notícias</a></li>
+            <li><a href="{{ url_for('calendario.calendario') }}">Calendário</a></li>
+            <li><a href="{{ url_for('main.diario') }}">Diário</a></li>
           </ul>
         </nav>
       </section>
 
-        <a href="#">
-          <button class="btn-image">
-            <img src="../static/images/Design sem nome.png" alt="">
-          </button>
-        </a>
+      <a href="{{ url_for('main.home') }}" class="btn-cta">Entrar</a>
+    </div>
+  </header>
 
-    </header>
+  <!-- MAIN -->
+  <main class="conteudo-central container">
+    <div class="row align-items-center justify-content-center">
 
-<main class="conteudo-central d-flex flex-column justify-content-center align-items-center text-center">
-  <h1 class="mb-4 fw-semibold">Bem-vindo ao SISPE</h1>
+      <!-- Coluna Esquerda -->
+      <div class="col-lg-7 col-md-8 text-start">
+        <h1 class="titulo-principal">Bem-vindo ao SISPE</h1>
+        <p class="subtitulo">
+          O sistema integrado que conecta você às informações mais importantes da sua rotina acadêmica.
+        </p>
+      </div>
 
-  <div class="mb-4 mural">
-    <p class="fw-bold fs-5 text-primary">Mural da Semana</p>
-    <ul class="list-unstyled">
-      <li><a class="lista-dash" href="{{ url_for('main.noticias') }}">Notícias</a></li>
-      <li><a class="lista-dash" href="{{ url_for('main.calendario') }}">Calendário</a></li>
-      <li><a class="lista-dash" href="{{ url_for('main.diario') }}">Diário</a></li>
-    </ul>
-  </div>
+      <!-- Coluna Direita (Mural Menor) -->
+      <div class="col-lg-4 col-md-4 mural mural-direita">
+        <h2 class="fw-bold mural-titulo"> Mural da Semana</h2>
+        <div class="d-flex flex-column gap-3">
+          {% if session.get("role") == "professor" %}
+          <a class="btn-mural" href="{{ url_for('professores.registrar_noticia') }}">
+            Registrar Notícias
+          </a>
+          {% endif %}
+          <a class="btn-mural" href="{{ url_for('main.listar_noticias') }}"> Notícias</a>
+          <a class="btn-mural" href="{{ url_for('calendario.calendario') }}"> Calendário</a>
+          <a class="btn-mural" href="{{ url_for('main.diario') }}"> Diário</a>
+        </div>
+      </div>
 
+    </div>
+  </main>
 
-</main>
+  <!-- FOOTER -->
   <footer>
     <div class="interface">
       <section class="middle-footer">
-        <a href="">Suporte</a>
-        <a href="">Informações</a>
-        <a href="">Marketing</a>
+        <a href="#">Suporte</a>
+        <a href="#">Informações</a>
+        <a href="#">Marketing</a>
       </section>
 
       <section class="bottom-footer">
@@ -80,5 +90,3 @@
 </body>
 
 </html>
-   
-

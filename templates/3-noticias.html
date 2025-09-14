@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Notícias</title>
+</head>
+<body>
+    <h1>Notícias</h1>
+    <ul>
+        {% for noticia in noticias %}
+            <li>
+                <strong>{{ noticia.titulo }}</strong> - {{ noticia.autor }} <br>
+                {{ noticia.conteudo }} <br>
+                <small>{{ noticia.data_publicacao }}</small>
+            </li>
+        {% endfor %}
+    </ul>
+    <li><a class="lista-dash" href="{{ url_for('main.dashboard') }}">Retornar à pagina principal</a></li>
+</body>
+</html>

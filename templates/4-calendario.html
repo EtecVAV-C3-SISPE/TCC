@@ -1,12 +1,45 @@
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
- </head>
- <body>
-    <ul>
-    <li><a href="{{ url_for('main.passeios') }}">Passeios</a></li>
-</ul>
- </body>
- </html>
+<html lang="pt-BR">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Calendario</title>
+</head>
+
+<body>
+   <h1>Calendário Escolar</h1>
+
+   <form method="POST">
+      <input type="text" name="titulo" placeholder="Título do evento" required>
+      <input type="date" name="data_evento" required>
+      <textarea name="descricao" placeholder="Descrição do evento"></textarea>
+      <button type="submit">Adicionar Evento</button>
+   </form>
+
+   <h2>Próximos Eventos</h2>
+      <!--<ul>
+         <li><a href="{{ url_for('main.passeios') }}">Passeios</a></li>
+      </ul>
+   -->
+      <ul>
+         {% for evento in eventos %}
+         <li>
+            <strong>{{ evento.data_evento }}:</strong> {{ evento.titulo }} - {{ evento.descricao }}
+
+            <!-- Botão de Editar -->
+            <a href="{{ url_for('calendario.editar_evento', evento_id=evento.id) }}">Editar</a>
+
+            <!-- Botão de Excluir -->
+            <form action="{{ url_for('calendario.excluir_evento', evento_id=evento.id) }}" method="POST"
+               style="display:inline;">
+               <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este evento?');">
+                  Excluir
+               </button>
+            </form>
+         </li>
+         {% endfor %}
+      </ul>
+      <li><a class="lista-dash" href="{{ url_for('main.dashboard') }}">Retornar à pagina principal</a></li>
+</body>
+
+</html>

@@ -1,3 +1,97 @@
+/* ===== LOGIN CONTAINER ===== */
+.login-container {
+  display: flex;
+  max-width: 750px;
+  margin: 100px auto;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+/* Lado esquerdo (com imagem de fundo) */
+.login-left {
+  flex: 1;
+  background-image: url("../static/images/sispe-logo.png"); /* caminho da sua imagem */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* esconde o <img> do HTML */
+.login-left img {
+  display: none;
+}
+
+/* Lado direito */
+.login-right {
+  flex: 1;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.login-right h2 {
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #1e3a8a; /* azul escuro */
+}
+
+/* Inputs */
+.custom-input {
+  border-radius: 8px;
+  border: 1px solid #2563eb; /* azul */
+  padding: 12px 15px;
+  font-size: 15px;
+}
+
+.custom-input:focus {
+  border-color: #1e40af; /* azul mais escuro */
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.25);
+  outline: none;
+}
+
+/* Botão login */
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #2563eb; /* azul */
+  color: #fff;
+  transition: all .2s ease;
+  margin-bottom: 15px;
+}
+
+.btn-login:hover {
+  background: #1e40af; /* azul escuro */
+  transform: translateY(-2px);
+}
+
+/* Links de login */
+.links-login {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.links-login a {
+  color: #2563eb; /* azul */
+  text-decoration: none;
+}
+
+.links-login a:hover {
+  text-decoration: underline;
+}
+
 /* ===== BASE ===== */
 body {
   font-family: 'Poppins', sans-serif;
@@ -88,47 +182,6 @@ header .logo img {
   transform: translateY(-2px);
 }
 
-/* ===== MAIN (ILHA BRANCA LOGIN) ===== */
-main {
-  max-width: 450px;
-  margin: 120px auto;
-  padding: 40px 35px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 25px; /* espaço adequado entre elementos */
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.25);
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  flex: 1;
-  margin-top: 200px;
-  margin-bottom: 210px;
-  /* removi o min-height que esticava demais */
-}
-
-/* ===== LOGIN BUTTONS ===== */
-.btn-login {
-  width: 100%;
-  padding: 16px;
-  border: none;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1.05rem;
-  cursor: pointer;
-  background: linear-gradient(180deg, #2563eb, #1e40af);
-  color: #fff;
-  transition: all .2s ease;
-  margin: 12px 0; /* espaçamento acima e abaixo de cada botão */
-}
-
-.btn-login:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
-}
 
 /* ===== FOOTER ===== */
 footer {
@@ -163,8 +216,14 @@ footer .bottom-footer p {
 
 /* Tablets */
 @media (max-width: 992px) {
-  main {
+  .login-container {
+    flex-direction: column;
     max-width: 90%;
+  }
+  .login-left {
+    display: none; /* esconde o lado esquerdo */
+  }
+  .login-right {
     padding: 40px 30px;
   }
 }
@@ -177,9 +236,11 @@ footer .bottom-footer p {
   .menu-desktop ul {
     gap: 16px;
   }
-  main {
-    max-width: 95%;
+  .login-container {
     margin: 60px auto;
+    max-width: 95%;
+  }
+  .login-right {
     padding: 30px 20px;
   }
 }
