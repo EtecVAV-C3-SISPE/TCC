@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SISPE</title>
+</head>
+<body>
+  <h1>Registros de Presença</h1>
+  <table>
+    <thead><tr><th>Data</th><th>Aluno</th><th>Presente?</th></tr></thead>
+    <tbody>
+      {% for p in presencas %}
+      <tr>
+        <td>{{ p.data }}</td>
+        <td>{{ p.aluno.nome }}</td>
+        <td>{{ 'Sim' if p.presente else 'Não' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

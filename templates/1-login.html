@@ -34,7 +34,7 @@
             <li><a href="{{ url_for('main.home') }}">Início</a></li>
             <li><a href="{{ url_for('main.listar_noticias') }}">Notícias</a></li>
             <li><a href="{{ url_for('calendario.calendario') }}">Calendário</a></li>
-            <li><a href="{{ url_for('main.diario') }}">Diário</a></li>
+            <!--<li><a href="{{ url_for('professores.diario') }}">Diário</a></li>-->
           </ul>
         </nav>
       </section>
@@ -56,6 +56,10 @@
 
       <form action="{{ url_for('professores.registro_professores') }}" method="get">
         <button class="btn-login" type="submit">Registrar como Professor</button>
+      </form>
+
+      <form action="{{ url_for('pais.registro_pais') }}" method="get">
+        <button class="btn-login" type="submit">Registrar como Pai</button>
       </form>
     </div>
   </main>

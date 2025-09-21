@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Pedidos de Registro de Pais</h1>
+
+  {% if pendentes %}
+  <ul>
+  {% for p in pendentes %}
+    <li>{{ p.nome }} - {{ p.email }}
+      <a href="{{ url_for('professores.aprovar_pai', pai_id=p.id, acao='aceitar') }}">Aceitar</a>
+      <a href="{{ url_for('professores.aprovar_pai', pai_id=p.id, acao='recusar') }}">Recusar</a>
+    </li>
+  {% endfor %}
+  </ul>
+{% else %}
+  <p>Não há nenhum pedido de aprovação.</p>
+{% endif %}
+</body>
+</html>

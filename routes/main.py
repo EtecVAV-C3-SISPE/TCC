@@ -73,11 +73,4 @@ def anexos(id):
         pass  
     return render_template('4-passeio_anexos.html', id=id)
 
-@main_route.route('/diario')
-def diario():
-    return render_template('5-diario.html')
-
-@main_route.route('/faltas')
-def faltas():
-    return render_template('5-faltas.html')
 

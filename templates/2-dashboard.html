@@ -33,7 +33,7 @@
             <li><a href="{{ url_for('main.home') }}">Início</a></li>
             <li><a href="{{ url_for('main.listar_noticias') }}">Notícias</a></li>
             <li><a href="{{ url_for('calendario.calendario') }}">Calendário</a></li>
-            <li><a href="{{ url_for('main.diario') }}">Diário</a></li>
+            <!--<li><a href="{{ url_for('professores.diario') }}">Diário</a></li>-->
           </ul>
         </nav>
       </section>
@@ -62,10 +62,25 @@
           <a class="btn-mural" href="{{ url_for('professores.registrar_noticia') }}">
             Registrar Notícias
           </a>
+          <a class="btn-mural" href="{{ url_for('professores.aprovar_pais') }}"> Aprovar Pai</a>
           {% endif %}
+          <!--
+          <a class="btn-mural" href="{{ url_for('professores.diario') }}">
+            Registrar Presenças
+          </a>
+          <a class="btn-mural" href="{{ url_for('professores.ver_presencas') }}">
+            Ver Presenças
+          </a>
+          
+          {% if session.get("role") != "professor" %}
+          <a class="btn-mural" href="{{ url_for('professores.ver_presencas') }}">
+            Ver Presença do Filho
+          </a>
+          {% endif %}
+          -->
           <a class="btn-mural" href="{{ url_for('main.listar_noticias') }}"> Notícias</a>
           <a class="btn-mural" href="{{ url_for('calendario.calendario') }}"> Calendário</a>
-          <a class="btn-mural" href="{{ url_for('main.diario') }}"> Diário</a>
+          <!--<a class="btn-mural" href="{{ url_for('professores.diario') }}"> Diário</a>-->
         </div>
       </div>
 

@@ -2,7 +2,7 @@ from routes.main import main_route, calendario_bp
 from routes.pais import pais_route
 from routes.professores import professores_route
 from database.database import db
-from database.models.pais import Pais, Professores, Noticias, Calendario
+from database.models.pais import Pais, Professores, Noticias, Calendario, Diario, Aluno, Presenca
 
 def configure_all(app):
     configure_routes(app)
@@ -20,3 +20,8 @@ def configure_db():
     db.create_tables([Professores])
     db.create_tables([Noticias])
     db.create_tables([Calendario])
+    db.create_tables([Aluno])
+    db.create_tables([Diario])
+    db.create_tables([Presenca])
+    
+
